@@ -11,8 +11,7 @@ class SharkTank extends React.Component {
   }
 
   render() {
-    const { students } = this.props;
-    console.log(students);
+    // const { students } = this.props;
     return (
       <div className="sharkTank">
         <h2>Shark Tank</h2>
