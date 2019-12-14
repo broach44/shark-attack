@@ -158,10 +158,20 @@ const students = [
     firstName: 'Raymond',
     lastName: 'Arceneaux',
     studentImg: 'https://i-love-png.com/images/74-747346_peter-mermaid-peter-family-guy-png.png',
-    isDead: false,
+    isDead: true,
   },
 ];
 
 const getStudents = () => students;
 
-export default { getStudents };
+const dearlyBeloved = () => {
+  const deadStudents = [];
+  students.forEach((student) => {
+    if (student.isDead === true) {
+      deadStudents.push(student);
+    }
+  });
+  return deadStudents;
+};
+
+export default { getStudents, dearlyBeloved };
