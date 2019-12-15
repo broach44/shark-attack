@@ -184,4 +184,14 @@ const livingStudents = () => {
   return liveStudents;
 };
 
-export default { getStudents, dearlyBeloved, livingStudents };
+const followTheLight = (studentId) => {
+  const selectedStudent = livingStudents().find((student) => student.id === studentId);
+  selectedStudent.isDead = true;
+};
+
+export default {
+  getStudents,
+  dearlyBeloved,
+  livingStudents,
+  followTheLight,
+};

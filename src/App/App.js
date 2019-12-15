@@ -4,7 +4,7 @@ import studentsData from '../helpers/data/studentsData';
 
 import SharkTank from '../Components/SharkTank/sharkTank';
 import Graveyard from '../Components/Graveyard/graveyard';
-
+import SharkAttack from '../Components/SharkAttack/SharkAttack';
 import './App.scss';
 
 class App extends React.Component {
@@ -19,12 +19,11 @@ class App extends React.Component {
 
 
   render() {
-    // console.log('in the app', studentsData.dearlyBeloved());
-
     return (
     <div className="App">
       <h1>Shark Attack</h1>
-      <button className='btn btn-danger'>HELP ME</button>
+      {/* <button className='btn btn-danger'>Shark Attack</button> */}
+      <SharkAttack students={this.state.students} />
       <div className="row justify-content-around">
       <SharkTank students={this.state.students} />
       <Graveyard students={this.state.students} />
