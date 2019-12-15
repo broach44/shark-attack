@@ -20,12 +20,8 @@ class App extends React.Component {
   killStudent = () => {
     const { students } = this.state;
     const liveStudents = studentsData.livingStudents();
-    console.log(liveStudents);
     const selectedStudentIndex = Math.floor(Math.random() * liveStudents.length);
-    console.log(selectedStudentIndex);
-    const selectedStudentId = liveStudents[selectedStudentIndex].id;
-    console.log(selectedStudentId);
-    studentsData.followTheLight(selectedStudentId);
+    studentsData.followTheLight(liveStudents[selectedStudentIndex].id);
     this.setState({ students });
   };
 
@@ -33,7 +29,6 @@ class App extends React.Component {
     return (
     <div className="App">
       <h1>Shark Attack</h1>
-      {/* <button className='btn btn-danger'>Shark Attack</button> */}
       <SharkAttack students={this.students} killStudent={this.killStudent} />
       <div className="row justify-content-around">
       <SharkTank students={this.state.students} />
