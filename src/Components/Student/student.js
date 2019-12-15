@@ -13,7 +13,7 @@ class Student extends React.Component {
     const { student } = this.props;
 
     return (
-      <div className="card col-2 m-2">
+      <div className="card col-3 m-2">
         <img src={student.studentImg} className="card-img-top" alt="student" />
         <div className="card-body">
           <h5 className="card-title">{student.firstName} {student.lastName}</h5>

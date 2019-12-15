@@ -13,13 +13,14 @@ class Graveyard extends React.Component {
   }
 
   render() {
-    const deadStudents = studentsData.dearlyBeloved().map((student) => <Student key={student.id} student={student} />);
+    // const deadStudents = studentsData.dearlyBeloved().map((student) => <Student key={student.id} student={student} />);
 
     return (
       <div className="graveyard col-5">
         <h2>Graveyard</h2>
         <div className="row">
-          {console.log(deadStudents)
+          {
+            (studentsData.dearlyBeloved().map((student) => <Student key={student.id} student={student} />))
           }
         </div>
       </div>
