@@ -4,7 +4,7 @@ import studentsData from '../helpers/data/studentsData';
 
 import SharkTank from '../Components/SharkTank/sharkTank';
 import Graveyard from '../Components/Graveyard/graveyard';
-
+import SharkAttack from '../Components/SharkAttack/SharkAttack';
 import './App.scss';
 
 class App extends React.Component {
@@ -17,14 +17,19 @@ class App extends React.Component {
     this.setState({ students });
   }
 
+  killStudent = () => {
+    const { students } = this.state;
+    const liveStudents = studentsData.livingStudents();
+    const selectedStudentIndex = Math.floor(Math.random() * liveStudents.length);
+    studentsData.followTheLight(liveStudents[selectedStudentIndex].id);
+    this.setState({ students });
+  };
 
   render() {
-    // console.log('in the app', studentsData.dearlyBeloved());
-
     return (
     <div className="App">
       <h1>Shark Attack</h1>
-      <button className='btn btn-danger'>HELP ME</button>
+      <SharkAttack students={this.students} killStudent={this.killStudent} />
       <div className="row justify-content-around">
       <SharkTank students={this.state.students} />
       <Graveyard students={this.state.students} />
