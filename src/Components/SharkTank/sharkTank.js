@@ -4,17 +4,18 @@ import PropTypes from 'prop-types';
 import Student from '../Student/student';
 import studentShape from '../../helpers/propz/studentShape';
 
+import livingStudents from '../../helpers/data/studentsData';
+
 import './sharkTank.scss';
 
 class SharkTank extends React.Component {
   static propTypes = {
-    students: PropTypes.arrayOf(studentShape.studentShape),
+    liveStudents: PropTypes.arrayOf(studentShape.studentShape),
   }
 
   render() {
-    const { students } = this.props;
-
-    const studentCards = students.map((student) => <Student key={student.id} student={student} />);
+    const liveStudents = livingStudents.livingStudents();
+    const studentCards = liveStudents.map((student) => <Student key={student.id} student={student} />);
     return (
       <div className="sharkTank col-5">
         <h2>Shark Tank</h2>

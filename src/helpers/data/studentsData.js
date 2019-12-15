@@ -116,7 +116,7 @@ const students = [
     firstName: 'Kelsey',
     lastName: 'Creel',
     studentImg: 'https://p7.hiclipart.com/preview/262/552/52/mermaid-cartoon-drawing-illustration-a-mermaid-with-curly-hair.jpg',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student18',
@@ -130,7 +130,7 @@ const students = [
     firstName: 'Maggie',
     lastName: 'Greene',
     studentImg: 'https://p7.hiclipart.com/preview/262/552/52/mermaid-cartoon-drawing-illustration-a-mermaid-with-curly-hair.jpg',
-    isDead: false,
+    isDead: true,
   },
   {
     id: 'student20',
@@ -158,10 +158,30 @@ const students = [
     firstName: 'Raymond',
     lastName: 'Arceneaux',
     studentImg: 'https://i-love-png.com/images/74-747346_peter-mermaid-peter-family-guy-png.png',
-    isDead: false,
+    isDead: true,
   },
 ];
 
 const getStudents = () => students;
 
-export default { getStudents };
+const dearlyBeloved = () => {
+  const deadStudents = [];
+  students.forEach((student) => {
+    if (student.isDead === true) {
+      deadStudents.push(student);
+    }
+  });
+  return deadStudents;
+};
+
+const livingStudents = () => {
+  const liveStudents = [];
+  students.forEach((student) => {
+    if (student.isDead === false) {
+      liveStudents.push(student);
+    }
+  });
+  return liveStudents;
+};
+
+export default { getStudents, dearlyBeloved, livingStudents };

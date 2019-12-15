@@ -17,7 +17,10 @@ class App extends React.Component {
     this.setState({ students });
   }
 
+
   render() {
+    // console.log('in the app', studentsData.dearlyBeloved());
+
     return (
     <div className="App">
       <h1>Shark Attack</h1>
