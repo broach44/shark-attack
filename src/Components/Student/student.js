@@ -3,6 +3,7 @@ import React from 'react';
 import studentShape from '../../helpers/propz/studentShape';
 
 import './student.scss';
+import fishbone from './assets/images/fishbone.svg';
 
 class Student extends React.Component {
   static propTypes = {
@@ -12,11 +13,23 @@ class Student extends React.Component {
   render() {
     const { student } = this.props;
 
+    const checkPulse = (x) => {
+      if (x.isDead) {
+        return (
+          <div className="card-header">
+            <h2 className="card-title">RIP</h2>
+            <img src={fishbone} alt="fishbone-icon" id="fishbone" />
+          </div>
+        );
+      }
+      return (<div className="card-header"><img src={student.studentImg} className="card-img-top" alt="student" /></div>);
+    };
+
     return (
       <div className="card col-3 m-2">
-        <img src={student.studentImg} className="card-img-top" alt="student" />
+        {checkPulse(student)}
         <div className="card-body">
-          <h5 className="card-title">{student.firstName} {student.lastName}</h5>
+          <h5 className="card-text">{student.firstName} {student.lastName}</h5>
         </div>
       </div>
     );

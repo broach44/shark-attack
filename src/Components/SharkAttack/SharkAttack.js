@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import studentsData from '../../helpers/data/studentsData';
 import studentShape from '../../helpers/propz/studentShape';
 
 class SharkAttack extends React.Component {
@@ -17,7 +16,7 @@ class SharkAttack extends React.Component {
 
   render() {
     return (
-      <button className='btn btn-danger' onClick={this.killStudentEvent}>Shark Attack</button>
+      <button className='btn btn-danger' onClick={this.killStudentEvent} id="attackButton">Shark Attack</button>
     );
   }
 }
