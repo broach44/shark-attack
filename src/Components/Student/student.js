@@ -22,7 +22,7 @@ class Student extends React.Component {
           </div>
         );
       }
-      return (<img src={student.studentImg} className="card-img-top" alt="student" />);
+      return (<div className="card-header"><img src={student.studentImg} className="card-img-top" alt="student" /></div>);
     };
 
     return (

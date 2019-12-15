@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import studentShape from '../../helpers/propz/studentShape';
+import studentShape from '../../helpers/propz/studentShape';
 import Student from '../Student/student';
 import studentsData from '../../helpers/data/studentsData';
 import './graveyard.scss';
@@ -9,7 +9,7 @@ import './graveyard.scss';
 
 class Graveyard extends React.Component {
   static propTypes = {
-    students: PropTypes.func,
+    students: PropTypes.arrayOf(studentShape.studentShape),
   }
 
   render() {
