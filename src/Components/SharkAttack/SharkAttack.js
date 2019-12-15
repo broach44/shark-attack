@@ -17,7 +17,7 @@ class SharkAttack extends React.Component {
 
   render() {
     return (
-      <button className='btn btn-danger' onClick={this.killStudentEvent}>Shark Attack</button>
+      <button className='btn btn-danger' onClick={this.killStudentEvent} id="attackButton">Shark Attack</button>
     );
   }
 }

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import studentsData from '../helpers/data/studentsData';
 
 import SharkTank from '../Components/SharkTank/sharkTank';
@@ -17,12 +16,21 @@ class App extends React.Component {
     this.setState({ students });
   }
 
+  disableAttack = (studentArr) => {
+    if (studentArr.length === 0) {
+      document.getElementById('attackButton').setAttribute('disabled', true);
+    }
+  }
+
   killStudent = () => {
     const { students } = this.state;
     const liveStudents = studentsData.livingStudents();
-    const selectedStudentIndex = Math.floor(Math.random() * liveStudents.length);
-    studentsData.followTheLight(liveStudents[selectedStudentIndex].id);
-    this.setState({ students });
+    if (liveStudents.length >= 1) {
+      const selectedStudentIndex = Math.floor(Math.random() * liveStudents.length);
+      studentsData.followTheLight(liveStudents[selectedStudentIndex].id);
+      this.setState({ students });
+      this.disableAttack(studentsData.livingStudents());
+    }
   };
 
   render() {
