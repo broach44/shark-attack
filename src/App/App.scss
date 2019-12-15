@@ -35,3 +35,24 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+#shark-space {
+  z-index: 3000;
+  position: absolute;
+  left: 20%;
+  margin-top: 75px;
+  color: darkred;
+  text-align: center;
+
+  &.hide {
+    display: none;
+  }
+
+  img {
+    width: 75%;
+    height: auto;
+  }
+
+}
